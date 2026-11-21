@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Linux dla Babci: jeden duży pasek na dole, "jak w Windows" -->
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="false"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=8;x=0;y=0"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="${PANEL_SIZE}"/>
+      <property name="icon-size" type="uint" value="0"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+${PANEL_BACKGROUND}
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+      </property>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <!-- Menu "Start" -->
+    <property name="plugin-1" type="string" value="whiskermenu">
+      <property name="button-title" type="string" value="Start"/>
+      <property name="button-icon" type="string" value="start-here"/>
+      <property name="show-button-title" type="bool" value="true"/>
+      <property name="show-button-icon" type="bool" value="true"/>
+      <property name="launcher-show-name" type="bool" value="true"/>
+      <property name="launcher-show-description" type="bool" value="false"/>
+      <property name="menu-width" type="int" value="600"/>
+      <property name="menu-height" type="int" value="560"/>
+      <property name="menu-opacity" type="int" value="100"/>
+      <property name="favorites-in-recent" type="bool" value="true"/>
+      <property name="view-mode" type="int" value="1"/>
+      <property name="show-command-lockscreen" type="bool" value="false"/>
+      <property name="show-command-switchuser" type="bool" value="false"/>
+      <property name="show-command-menueditor" type="bool" value="false"/>
+      <property name="show-command-profile" type="bool" value="false"/>
+      <property name="category-icon-size" type="int" value="3"/>
+      <property name="item-icon-size" type="int" value="4"/>
+      <property name="favorites" type="array">
+        <value type="string" value="firefox.desktop"/>
+        <value type="string" value="thunar.desktop"/>
+        <value type="string" value="org.xfce.ristretto.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <!-- Otwarte okna z podpisami -->
+    <property name="plugin-4" type="string" value="tasklist">
+      <property name="show-labels" type="bool" value="true"/>
+      <property name="grouping" type="uint" value="0"/>
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="include-all-workspaces" type="bool" value="true"/>
+      <property name="middle-click" type="uint" value="0"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="icon-size" type="int" value="0"/>
+    </property>
+    <property name="plugin-7" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="show-notifications" type="bool" value="false"/>
+    </property>
+    <!-- Zegar: godzina + dzień tygodnia i data -->
+    <property name="plugin-8" type="string" value="clock">
+      <property name="mode" type="uint" value="2"/>
+      <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-time-format" type="string" value="%H:%M"/>
+      <property name="digital-time-font" type="string" value="${FONT_NAME} Bold ${FONT_SIZE}"/>
+      <property name="digital-date-format" type="string" value="%A, %-d %B"/>
+      <property name="digital-date-font" type="string" value="${FONT_NAME} ${FONT_SIZE}"/>
+      <property name="tooltip-format" type="string" value="%A, %-d %B %Y"/>
+    </property>
+  </property>
+</channel>

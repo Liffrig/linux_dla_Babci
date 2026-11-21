@@ -221,3 +221,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Linux dla Babci
+config.env
+.idea/
+!/lib/
+
+README.md

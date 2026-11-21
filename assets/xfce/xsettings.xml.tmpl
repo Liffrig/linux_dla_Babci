@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Linux dla Babci: motyw, czcionki, kursor, dwuklik -->
+<channel name="xsettings" version="1.0">
+  <property name="Net" type="empty">
+    <property name="ThemeName" type="string" value="${GTK_THEME}"/>
+    <property name="IconThemeName" type="string" value="${ICON_THEME}"/>
+    <property name="DoubleClickTime" type="int" value="${DOUBLE_CLICK_TIME}"/>
+    <property name="DoubleClickDistance" type="int" value="12"/>
+    <property name="DndDragThreshold" type="int" value="16"/>
+    <property name="CursorBlink" type="bool" value="true"/>
+    <property name="EnableEventSounds" type="bool" value="false"/>
+    <property name="EnableInputFeedbackSounds" type="bool" value="false"/>
+  </property>
+  <property name="Xft" type="empty">
+    <property name="DPI" type="int" value="${DPI}"/>
+    <property name="Antialias" type="int" value="1"/>
+    <property name="Hinting" type="int" value="1"/>
+    <property name="HintStyle" type="string" value="hintslight"/>
+    <property name="RGBA" type="string" value="rgb"/>
+  </property>
+  <property name="Gtk" type="empty">
+    <property name="FontName" type="string" value="${FONT_NAME} ${FONT_SIZE}"/>
+    <property name="MonospaceFontName" type="string" value="Ubuntu Mono ${FONT_SIZE}"/>
+    <property name="CursorThemeName" type="string" value="${CURSOR_THEME}"/>
+    <property name="CursorThemeSize" type="int" value="${CURSOR_SIZE}"/>
+    <property name="ButtonImages" type="bool" value="true"/>
+    <property name="MenuImages" type="bool" value="true"/>
+    <property name="DialogsUseHeader" type="bool" value="false"/>
+  </property>
+</channel>
