@@ -46,6 +46,14 @@ set_wallpaper() {
     [[ -n "$keys" ]] && break
     sleep 1
   done
+  # xfdesktop 4.18 na świeżym koncie nie tworzy tych kluczy, dopóki ktoś ręcznie
+  # nie zmieni tapety – wtedy budujemy je z nazw monitorów (np. eDP-1, HDMI-1)
+  if [[ -z "$keys" ]] && command -v xrandr >/dev/null; then
+    local mon
+    for mon in $(xrandr --listactivemonitors 2>/dev/null | awk 'NR>1 {print $NF}'); do
+      keys+="/backdrop/screen0/monitor$mon/workspace0/last-image"$'\n'
+    done
+  fi
   for key in $keys; do
     base="${key%/last-image}"
     xfset "$base/last-image" string "$WALLPAPER"
