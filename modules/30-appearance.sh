@@ -77,8 +77,32 @@ EOF
   done
 }
 
+touchpad() {
+  # stuknięcie w touchpad = kliknięcie (libinput domyślnie ma to wyłączone)
+  local conf=/etc/X11/xorg.conf.d/40-babcia-touchpad.conf
+  if is_container; then skip "touchpad (tryb --container)"; return 0; fi
+  if is_yes "${TOUCHPAD_TAP:-yes}"; then
+    write_root_file "$conf" <<'EOF'
+# Linux dla Babci – stuknięcie w touchpad działa jak kliknięcie
+Section "InputClass"
+    Identifier "babcia-touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "TappingDrag" "on"
+    Option "DisableWhileTyping" "on"
+EndSection
+EOF
+    ok "touchpad: klikanie stuknięciem (działa po restarcie)"
+  else
+    rm -f "$conf"
+    skip "klikanie stuknięciem wyłączone w konfiguracji"
+  fi
+}
+
 main() {
   check_theme
+  touchpad
   xfconf_files
   # starsze wersje tego repo dodawały przycisk Firefoksa na pasek
   rm -rf "$(user_home)/.config/xfce4/panel/launcher-2"

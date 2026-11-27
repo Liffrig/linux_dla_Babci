@@ -228,3 +228,5 @@ config.env
 !/lib/
 
 README.md
+# obrazy systemów
+*.iso
